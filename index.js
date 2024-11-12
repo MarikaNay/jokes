@@ -12,7 +12,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Try /random_joke, /random_ten, /jokes/random, or /jokes/ten , /jokes/random/<any-number>');
+  res.send('Try /random_joke, /random_ten, /jokes/random, or /jokes/ten , /jokes/random/, /jokes/count<any-number>');
 });
 
 app.get('/ping', (req, res) => {
@@ -76,7 +76,7 @@ app.get('/types', (req, res, next) => {
   res.json(types);
 })
 app.get('/jokes/count', (req, res) => {
-  res.json(count);
+  res.json({count});
 });
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
